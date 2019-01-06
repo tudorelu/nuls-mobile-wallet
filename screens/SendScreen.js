@@ -8,6 +8,9 @@ import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-nativ
 import Icon from 'react-native-vector-icons/Feather';
 
 import InputField from '../components/InputField';
+import PrimaryButton from '../components/PrimaryButton';
+
+import Card from '../components/Card';
 
 import theme from '../theme';
 
@@ -28,6 +31,9 @@ export default class SendScreen extends Component {
       		<Text style={styles.headerText}> Send Funds </Text>
       	</View>
       	<View style={styles.content}> 
+
+      		<Card title="Wallet Value"> $ {12,345.43} </Card>
+      		<Card title="Total"> N {4,566.33} </Card>
 
       		<InputField
       			label="Address Receiver"
@@ -54,7 +60,11 @@ export default class SendScreen extends Component {
       			onPress={() => console.log("Press")}
       		>
       			<Text style={styles.buttonText}> Send </Text>
+
     			</TouchableOpacity>
+
+    			<PrimaryButton title="Send" />
+
       	</View>
       </View>
     );
@@ -93,18 +103,10 @@ const styles = StyleSheet.create({
   },
   button: {
   	...theme.primaryButton,
-  	margin:5,
-  	marginBottom: 10,
-  	marginTop:20,
-  	alignSelf:'flex-end',
-  	justifyContent:'center',
-  	alignSelf:'center',
   	width:'100%',
   },
   buttonText: {
   	...theme.buttonText,
-  	alignSelf:'center',
-  	padding: 5,
   },
   headerText: {
   	...theme.header, 

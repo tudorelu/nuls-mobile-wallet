@@ -50,11 +50,28 @@ const theme = {
   primaryButton: {
     backgroundColor: '#00235B',
     borderRadius: 0,
+    margin:5,
+    marginBottom: 10,
+    marginTop:10,
+    alignSelf:'flex-end',
+    justifyContent:'center',
+    alignSelf:'center',
   },
-  buttonText:{
+  buttonText: {
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight: 'bold',
+    alignSelf:'center',
+    padding: 5,
+  },
+  text: {
+    //fontFamily: "Neuzeit Grotesk",
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    alignSelf:'center',
+    padding: 5,
   },
   secondaryButton: {
     textTransform: 'none',
