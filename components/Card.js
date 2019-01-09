@@ -4,12 +4,13 @@ import React, { Component } from 'react';
 
 import {
   StyleSheet,
-  View,
+  View, 
+  Text
 } from 'react-native';
 
 import theme from '../theme';
 
-export default class Card extends Component {
+class Card extends Component {
   render() {
     
     const {title, children} = this.props;
@@ -17,12 +18,10 @@ export default class Card extends Component {
     return (
     	<View style={styles.container}>
     		<View style={styles.title}>
-    			{title}
+          <Text style={styles.titleText}>{title}</Text>
     		</View>
     		<View style={styles.content}>
-    			<Text style={styles.contentText}>
-    				{children}
-    			</Text>
+        <Text style={styles.contentText}>{children}</Text>
     		</View>
     	</View>
     );
@@ -32,20 +31,26 @@ export default class Card extends Component {
 const styles = StyleSheet.create({
 	container: {
 		width: 300,
-		height: 140,
+    paddingTop:10,
+    paddingBottom:5
 	},
 	title: {
-		height: 40,
 		backgroundColor: theme.palette.primary.main,
 	},
 	content: {
 		backgroundColor: theme.palette.primary.midDark,
 		justifyContent: 'center', 
 	},
-	contentText: {
-		...theme.text,
-		fontSize: 32,
-	}
+  titleText: {
+    color:'white',
+    margin:5,
+    marginLeft:10,
+    fontSize: 14,
+  },
+  contentText: {
+    ...theme.text,
+    fontSize: 32,
+  }
 });
 
 
