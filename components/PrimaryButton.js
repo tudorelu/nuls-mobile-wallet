@@ -20,7 +20,6 @@ export default class PrimaryButton extends Component {
 const styles = StyleSheet.create({
   button: {
   	...theme.primaryButton,
-  	width:'100%',
   },
   buttonText: {
   	...theme.buttonText,

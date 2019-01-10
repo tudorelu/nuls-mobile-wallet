@@ -30,15 +30,16 @@ class Card extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		width: 300,
-    paddingTop:10,
-    paddingBottom:5
+    width:theme.defaultContainerWidth,
+    paddingBottom:15,
+    alignSelf:'center'
 	},
 	title: {
 		backgroundColor: theme.palette.primary.main,
 	},
 	content: {
 		backgroundColor: theme.palette.primary.midDark,
+    padding:10,
 		justifyContent: 'center', 
 	},
   titleText: {

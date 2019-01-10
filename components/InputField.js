@@ -3,24 +3,35 @@ import { Text, TextInput, View, StyleSheet } from 'react-native';
 
 import theme from '../theme';
 
+import { Icon } from 'react-native-elements'
+
 export default class InputField extends React.Component {
   render() {
-  	const {label} = this.props;
+  	const {label, icon} = this.props;
     return (
 			<View style={styles.root}>
 	  		<Text style={styles.label}>{label}</Text>
-	  		<TextInput 
-	  			style={styles.inputField}
-	  			{...this.props}
-	  			/> 
-  		</View>
+        <View style={styles.inputSection}>
+          <TextInput
+            style={styles.inputField}
+            {...this.props}
+          />
+          {icon !== undefined
+          ? <View style={styles.icon}>
+              <Icon name={icon} type="feather" size={20} color="white"/>
+            </View>
+          : []
+          }
+        </View>
+    		</View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   root: {
-  	width:'100%',
+    alignSelf:'center',
+  	width:theme.defaultContainerWidth,
   },
   label: {
   	...theme.inputFieldLabel,
@@ -28,11 +39,17 @@ const styles = StyleSheet.create({
   	marginTop:10,
   },
   inputField: {
+    flex:1,
   	...theme.inputField,
-  	marginTop:5,
-  	marginBottom:5,
-  	padding:3,
-  	paddingLeft:15,
-  	paddingRight:15,
-  }
+  },
+  inputSection: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:'#002E78',
+  },
+  icon: {
+    paddingRight:10,
+  },
 });

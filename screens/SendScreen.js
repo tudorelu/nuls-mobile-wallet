@@ -16,6 +16,7 @@ import InputField from '../components/InputField'
 import Card from '../components/Card'
 
 import theme from '../theme';
+
 class SendScreen extends Component {
 
 	constructor(props) {
@@ -28,7 +29,7 @@ class SendScreen extends Component {
     	<GenericScreen title="Send Funds" avatar="upload">
 
     		<Card title="Wallet Value">$ 12,345.43</Card>
-    		<Card title="Total">N 4,566.33</Card>
+    		{/*<Card title="Total">N 4,566.33</Card>*/}
 
     		<InputField
     			label="Address Receiver"
@@ -50,15 +51,7 @@ class SendScreen extends Component {
       		value={this.state.note}
     		/>
 
-    		<TouchableOpacity 
-    			style={styles.button}
-    			onPress={() => console.log("Press")}
-    		>
-    			<Text style={styles.buttonText}> Send </Text>
-
-  			</TouchableOpacity>
-
-  			<PrimaryButton title="Send" />
+  			<PrimaryButton title="Send" onPress={() => console.log("Send Pressed")} />
 
     	</GenericScreen>
     );
@@ -69,7 +62,6 @@ const styles = StyleSheet.create({
 
   button: {
   	...theme.primaryButton,
-  	width:'100%',
   },
   buttonText: {
   	...theme.buttonText,

@@ -3,11 +3,27 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import CreateWalletScreen from '../screens/CreateWalletScreen';
-import SendScreen from '../screens/SendScreen';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+
+import ReceiveScreen from '../screens/ReceiveScreen';
+import CreateWalletScreen from '../screens/CreateWalletScreen';
+import SendScreen from '../screens/SendScreen';
+
+const ReceiveStack = createStackNavigator({
+  Receive: ReceiveScreen,
+});
+
+ReceiveStack.navigationOptions = {
+  tabBarLabel: 'Receive',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name='md-down'
+    />
+  ),
+};
 
 const CreateWalletStack = createStackNavigator({
   CreateWallet: CreateWalletScreen,
@@ -32,7 +48,7 @@ SendStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name='md-upload'
+      name='md-up'
     />
   ),
 };
@@ -84,6 +100,7 @@ SettingsStack.navigationOptions = {
 };
 
 export default createBottomTabNavigator({
+  ReceiveScreen,
   SendScreen,
   CreateWalletScreen,
   HomeStack,

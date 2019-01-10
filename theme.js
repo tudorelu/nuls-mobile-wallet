@@ -13,17 +13,34 @@ const theme = {
       contrastText: '#FFF',
     },
   },
+  walletQRImage:{
+    alignSelf:'center',
+    width:300,
+    height:300,
+    margin:20,
+  },
   header: {
     color:'white',
     //fontFamily: "Neuzeit Grotesk",
     fontSize: 24,
     fontWeight: 'bold',
   },
-  inputField: {
+  picker: {
     backgroundColor:'#002E78',
+    color: 'white',
+    alignSelf:'center',
+    height: 40,
+    width: 280,
+  },
+  inputField: {
     color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
+    marginTop:5,
+    marginBottom:5,
+    padding:3,
+    paddingLeft:15,
+    paddingRight:10,
   },
   inputFieldLabel: {
     opacity: 0.8, 
@@ -56,7 +73,10 @@ const theme = {
     alignSelf:'flex-end',
     justifyContent:'center',
     alignSelf:'center',
+    width: 300,
+    height: 40,
   },
+  defaultContainerWidth:300,
   buttonText: {
     color: '#FFFFFF',
     fontSize: 16,

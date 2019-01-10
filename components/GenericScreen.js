@@ -16,15 +16,12 @@ export default class GenericScreen extends Component {
 	render(){
     const {title, avatar} = this.props;
 		return (
-      <ScrollView style={styles.root}>
+      <ScrollView style={styles.root} contentContainerStyle={{justifyContent:'center', alignItems:'center'}}>
       	<View style={styles.header}> 
 	      	 <View style={styles.avatar}>
-			    	
-            { 
-              //<Icon name={avatar} type="feather" size={24} color="#99f"/>
-            }
+              <Icon name={avatar} type="feather" size={24} color="#99f"/>
   				</View>
-      		<Text style={styles.headerText}> title </Text>
+      		<Text style={styles.headerText}> {title} </Text>
       	</View>
       	<View style={styles.content}> 
           {this.props.children}	
@@ -36,17 +33,19 @@ export default class GenericScreen extends Component {
 
 const styles = StyleSheet.create({
   root: {
-    width:330,
+    flex:1,
+    width:'100%',
     alignSelf:'center',
     backgroundColor: theme.palette.primary.light,
-    padding:20,
+    //padding:20,
     marginTop:30,
-    paddingBottom:30
+    paddingBottom:30,
   },
   header: {
     alignSelf: 'flex-start',
     flexDirection:'row',
 		alignItems:'center',
+    paddingBottom: 10,
   },
   headerText: {
     ...theme.header, 
@@ -54,7 +53,7 @@ const styles = StyleSheet.create({
   content: {
   	justifyContent:'center',
   	width:'100%',
-    alignSelf: 'flex-start',
+    alignSelf: 'center',
     flexDirection:'column',
 		alignItems:'flex-start',
   },
