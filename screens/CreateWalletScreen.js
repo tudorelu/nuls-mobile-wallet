@@ -4,7 +4,9 @@ import {
   StyleSheet,
   View,
   Picker,
-} from 'react-native';
+  Platform,
+	TouchableOpacity,
+  } from 'react-native';
 
 import GenericScreen from '../components/GenericScreen'
 import PrimaryButton from '../components/PrimaryButton'
@@ -18,6 +20,41 @@ import { Icon } from 'react-native-elements'
 import theme from '../theme';
 
 class CreateWalletScreen extends Component {
+	
+	static navigationOptions = ({navigation}) => {
+    const {params = {}} = navigation.state;
+    return {
+      headerLeft: 
+        <TouchableOpacity onPress={ () => navigation.goBack() }>
+          <Icon
+            name='arrow-left'
+            type='feather'
+            color='#FFF'
+            containerStyle={{marginRight:14, marginLeft:14}}
+            size={24}
+          />
+        </TouchableOpacity>,
+      headerRight: 
+        <TouchableOpacity onPress={ () => navigation.navigate('Share') }>
+          <Icon
+            name='share-2'
+            type='feather'
+            color='#FFF'
+            containerStyle={{marginRight:14, marginLeft:14}}
+            size={24}
+          />
+        </TouchableOpacity>,
+      headerStyle: {
+      	backgroundColor: theme.palette.primary.light,
+      	paddingTop:0,
+      	marginTop: 0,
+        elevation: 0,
+        shadowOpacity: 0,
+        borderBottomWidth: 0,
+      },
+    };
+  };
+	
 	constructor(props) {
 	  super(props);
 	  this.state = {
@@ -79,9 +116,9 @@ class CreateWalletScreen extends Component {
 const styles = StyleSheet.create({
   pickerContainer: {
     ...theme.picker,
-  	flexDirection: 'row', 
-		marginBottom:20,
-		width:theme.defaultContainerWidth,
+  	flexDirection: 'row',
+		marginBottom: 20,
+		width: theme.defaultContainerWidth,
   },
 	picker :{
 		...theme.picker,

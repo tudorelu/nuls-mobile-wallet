@@ -68,7 +68,7 @@ const theme = {
     backgroundColor: '#00235B',
     borderRadius: 0,
     margin:5,
-    marginBottom: 10,
+    marginBottom:10,
     marginTop:10,
     alignSelf:'flex-end',
     justifyContent:'center',
@@ -99,6 +99,21 @@ const theme = {
     borderRadius: 0,
     color: '#FFFFFF'
   },
+  avatar:{
+    margin:10,
+    alignItems:'center',
+    justifyContent:'center',
+    width:40,
+    height:40,
+    borderRadius:100,
+    backgroundColor:'#00235B',
+  },
+  headerImage:{
+    margin:10,
+    alignItems:'center',
+    justifyContent:'center',
+    backgroundColor:'#00235B'
+  }
 };
 
 export default theme;

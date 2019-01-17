@@ -20,6 +20,7 @@ export default class PrimaryButton extends Component {
 const styles = StyleSheet.create({
   button: {
   	...theme.primaryButton,
+    marginTop:30,
   },
   buttonText: {
   	...theme.buttonText,

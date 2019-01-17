@@ -1,15 +1,8 @@
 //Authored by: Tudor Barbulescu (tudor.barbu7@gmail.com) ROMANIA + AUSTRALIA
 
 import React, { Component } from 'react';
-
 import { ScrollView, View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
-
-//import Icon from 'react-native-vector-icons/Feather';
-
-//import { Ionicons } from '@expo/vector-icons';
-
 import { Icon } from 'react-native-elements'
-
 import theme from '../theme';
 
 export default class GenericScreen extends Component {
@@ -18,10 +11,12 @@ export default class GenericScreen extends Component {
 		return (
       <ScrollView style={styles.root} contentContainerStyle={{justifyContent:'center', alignItems:'center'}}>
       	<View style={styles.header}> 
+        {
 	      	 <View style={styles.avatar}>
-              <Icon name={avatar} type="feather" size={24} color="#99f"/>
+              <Icon name={avatar} type="feather" size={20} color="#99f"/>
   				</View>
-      		<Text style={styles.headerText}> {title} </Text>
+        }   	
+        	<Text style={styles.headerText}> {title} </Text>
       	</View>
       	<View style={styles.content}> 
           {this.props.children}	
@@ -37,15 +32,13 @@ const styles = StyleSheet.create({
     width:'100%',
     alignSelf:'center',
     backgroundColor: theme.palette.primary.light,
-    //padding:20,
-    marginTop:30,
     paddingBottom:30,
   },
   header: {
     alignSelf: 'flex-start',
     flexDirection:'row',
 		alignItems:'center',
-    paddingBottom: 10,
+    padding: 30,
   },
   headerText: {
     ...theme.header, 
@@ -58,12 +51,6 @@ const styles = StyleSheet.create({
 		alignItems:'flex-start',
   },
   avatar: {
-  	margin:10,
-		alignItems:'center',
-		justifyContent:'center',
-		width:80,
-		height:80,
-		borderRadius:100,
-		backgroundColor:theme.palette.primary.midDark,
+    ...theme.avatar
   },
 });
