@@ -25,6 +25,7 @@ class ReceiveScreen extends Component {
   static navigationOptions = ({navigation}) => {
     const {params = {}} = navigation.state;
     return {
+      /*
       title:'Receive',
       headerTitle:  
         <View style={styles.logo} >
@@ -32,7 +33,7 @@ class ReceiveScreen extends Component {
         </View>,
       headerStyle: {
         alignItems:'center',
-      },
+      },*/
       headerLeft: 
         <TouchableOpacity onPress={ () => navigation.goBack() }>
           <Icon
@@ -82,11 +83,11 @@ class ReceiveScreen extends Component {
 
         <Image
           style={styles.image}
-          source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
+          source={require('../../assets/images/qr.jpg')}
         />
-
-  			<PrimaryButton title="Back" onPress={() => console.log("Back Pressed")} />
-
+{
+  			//<PrimaryButton title="Back" onPress={() => console.log("Back Pressed")} />
+}
     	</GenericScreen>
     );
   }
