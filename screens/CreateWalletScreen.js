@@ -14,9 +14,7 @@ import InputField from '../components/InputField'
 import LabeledText from '../components/LabeledText'
 
 import { Dropdown } from 'react-native-material-dropdown';
-
 import { Icon } from 'react-native-elements'
-
 import theme from '../theme';
 
 class CreateWalletScreen extends Component {
@@ -57,14 +55,31 @@ class CreateWalletScreen extends Component {
 	
 	constructor(props) {
 	  super(props);
+	  let wallet =  {
+	  	address:'NsduyNoZzMEA9X3TtKLkoskBunBqP2Ny',
+	  	privateKey:'3a74ac23b5b0d5c34b04dcc1011d1a97c95da6bc34c1481e787ff4ef1e7b77b4',
+	  	publicKey:'02c9fb157293fdc67816ba5e38a014c7c641434b65eb2d024e9b5ae57091d73d74',
+	  	password:''
+	  }//Account.create();
+	  console.log("WALLET IS");
+	  console.log(wallet);
 	  this.state = {
 	  	walletType: 'new-wallet',
 	  	address:'NsduyNoZzMEA9X3TtKLkoskBunBqP2Ny',
 	  	privateKey:'3a74ac23b5b0d5c34b04dcc1011d1a97c95da6bc34c1481e787ff4ef1e7b77b4',
 	  	publicKey:'02c9fb157293fdc67816ba5e38a014c7c641434b65eb2d024e9b5ae57091d73d74',
 	  	password:'',
+	  	wallet: wallet,
 	  };
 	}
+
+	_createWallet = () => {
+		//this.setState({wallet:Account.create()});
+	}
+/*
+	_createEncryptedWallet = (password) => {
+		this.setState({wallet:NULS.account.create(password)});
+	}*/
 
 	_renderContent = () => {
 		contents = []
@@ -73,16 +88,18 @@ class CreateWalletScreen extends Component {
 		    contents.push(<LabeledText key={0} label="Address">{this.state.address}</LabeledText>);
 		    contents.push(<LabeledText key={1} label="Private Key">{this.state.privateKey}</LabeledText>);
 		    contents.push(<LabeledText key={2} label="Public Key">{this.state.publicKey}</LabeledText>);
-		    contents.push(<InputField key={3} secureTextEntry label="Password" onChangeText={(value)=>{this.setState({password:value})}}>{this.state.password}</InputField>);
-		    contents.push(<PrimaryButton key={4} title="New Wallet" onPress={() => console.log("New Wallet")}/>);
+		    contents.push(<InputField key={3} label="Password" secureTextEntry onChangeText={(value)=>{this.setState({password:value})}}>{this.state.password}</InputField>);
+		    contents.push(<PrimaryButton key={4} title="Create New Wallet" onPress={() => this._createWallet()}/>);
 		    break;
 		  case 'private-key':
 				contents.push(<InputField key={0} label="Private Key"/>);
-				break;
+		    contents.push(<PrimaryButton key={4} title="Create Wallet" onPress={() => console.log("Create Wallet")}/>);
+		    break;
 		  case 'encrypted-key':
 				contents.push(<InputField key={0} label="Encryted Key"/>);
 				contents.push(<InputField key={1} label="Passphrase" carretHidden/>);
-		  	break;
+		    contents.push(<PrimaryButton key={4} title="Create Wallet" onPress={() => console.log("Create Wallet")}/>);
+		    break;
 		  default:
 		   	break;
 		}

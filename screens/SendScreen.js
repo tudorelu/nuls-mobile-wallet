@@ -13,7 +13,6 @@ import {
 import GenericScreen from '../components/GenericScreen'
 import PrimaryButton from '../components/PrimaryButton'
 import InputField from '../components/InputField'
-import Card from '../components/Card'
 
 import { Icon } from 'react-native-elements'
 

@@ -10,14 +10,12 @@ import {
   Image,
 } from 'react-native';
 
+import { Icon } from 'react-native-elements'
 
 import GenericScreen from '../../components/GenericScreen'
 import PrimaryButton from '../../components/PrimaryButton'
 import InputField from '../../components/InputField'
 import TestInput from '../../components/TestInput'
-import Card from '../../components/Card'
-
-import { Icon } from 'react-native-elements'
 import theme from '../../theme';
 
 class ReceiveScreen extends Component {
@@ -30,9 +28,6 @@ class ReceiveScreen extends Component {
         <View style={styles.logo} >
           <Icon name="download" type="feather" size={24} color="#99f"/>
         </View>,
-      headerStyle: {
-        alignItems:'center',
-      },
       headerLeft: 
         <TouchableOpacity onPress={ () => navigation.goBack() }>
           <Icon

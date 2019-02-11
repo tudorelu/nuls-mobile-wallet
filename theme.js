@@ -2,6 +2,7 @@ const theme = {
   palette: {
     primary: {
       light:'#0A3B89',
+      lighter: '#82adf2',
       main: '#002E78',
       midDark: '#00235B',
       dark: '#031E4A',
@@ -12,6 +13,14 @@ const theme = {
       dark: '#5FB640',
       contrastText: '#FFF',
     },
+    green:{
+      main:"#74D301",
+    },
+    red:{
+      main:"#ff001e",
+      light:"#ff8997",
+      midDark:"#D0021B",
+    }
   },
   walletQRImage:{
     alignSelf:'center',
@@ -90,7 +99,6 @@ const theme = {
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
-    alignSelf:'center',
     padding: 5,
   },
   secondaryButton: {

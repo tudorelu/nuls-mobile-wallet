@@ -10,7 +10,7 @@ import {
 
 import theme from '../theme';
 
-class Card extends Component {
+class CarouselCard extends Component {
   render() {
     
     const {title, children} = this.props;
@@ -21,7 +21,7 @@ class Card extends Component {
           <Text style={styles.titleText}>{title}</Text>
     		</View>
     		<View style={styles.content}>
-        <Text style={styles.contentText}>{children}</Text>
+          <Text style={styles.contentText}>{children}</Text>
     		</View>
     	</View>
     );
@@ -30,17 +30,15 @@ class Card extends Component {
 
 const styles = StyleSheet.create({
 	container: {
+    display:'flex',
     width:theme.defaultContainerWidth,
-    paddingBottom:15,
+    paddingBottom:10,
+    height:'30%',
+    backgroundColor:'black',
     alignSelf:'center'
 	},
 	title: {
 		backgroundColor: theme.palette.primary.main,
-	},
-	content: {
-		backgroundColor: theme.palette.primary.midDark,
-    padding:10,
-		justifyContent: 'center', 
 	},
   titleText: {
     color:'white',
@@ -48,11 +46,17 @@ const styles = StyleSheet.create({
     marginLeft:10,
     fontSize: 14,
   },
+	content: {
+    display:'flex',
+    backgroundColor: theme.palette.primary.midDark,
+  },
   contentText: {
     ...theme.text,
+    //backgroundColor:'pink',
     fontSize: 32,
+    margin:10,
   }
 });
 
 
-export default Card;
+export default CarouselCard;
