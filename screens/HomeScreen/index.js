@@ -91,7 +91,7 @@ class HomeScreen extends Component {
     var tt = tx.to + ""
     var date = tx.date.substring(2, 16)
     return(
-      <View key={tx.hash} style={[styles.txListItem, index%2===1?{backgroundColor:theme.palette.primary.main}:{}]}>
+      <View key={tx.hash} style={[styles.txListItem, index%2===0?{backgroundColor:theme.palette.primary.main}:{}]}>
         {tx.type==="IN"
         ? <View style={styles.txIcon} >
             <Icon name='download' type="feather" size={16} color="#99f"/>
@@ -101,7 +101,7 @@ class HomeScreen extends Component {
           </View>
         }
         <View style={{flexDirection:'column'}}>
-          <Text style={[styles.txItemElement, {fontWeight:'bold', fontSize: 16}]}> {date} </Text>
+          <Text style={[styles.txItemElement, {fontWeight:'bold', fontSize: 17}]}> {date} </Text>
           {
             tx.type==="IN"
             ?<Text style={[styles.txItemElement]}> 
@@ -114,7 +114,7 @@ class HomeScreen extends Component {
         </View>
         
         {/*<Text style={styles.txItemElement}> {tx.type === "IN"?"    IN":tx.type} </Text>*/}
-        <Text style={[styles.txItemElement, {marginLeft:30}, tx.value > 0?{color:theme.palette.green.main}:{color:theme.palette.red.main}]}> {tx.value} </Text>
+        <Text style={[styles.txItemElement, {marginLeft:30, fontSize:15}, tx.value > 0?{color:theme.palette.green.main}:{color:theme.palette.red.main}]}> {tx.value} </Text>
       </View>); 
   }
 
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
 		marginRight: "auto"
   },
   txListContainer:{
-    width:theme.defaultContainerWidth,
+    width:'99%'//theme.defaultContainerWidth,
   },
   txListItem:{
     flexDirection:'row',

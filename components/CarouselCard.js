@@ -31,10 +31,9 @@ class CarouselCard extends Component {
 const styles = StyleSheet.create({
 	container: {
     display:'flex',
-    width:theme.defaultContainerWidth,
-    paddingBottom:10,
     height:'30%',
-    backgroundColor:'black',
+    width:theme.defaultContainerWidth-20,
+    paddingBottom:10,
     alignSelf:'center'
 	},
 	title: {
