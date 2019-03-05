@@ -6,12 +6,14 @@ import theme from '../theme';
 
 export default class PrimaryButton extends Component {
   render() {
+    const {disabled, title, onPress} = this.props;
     return (
   		<TouchableOpacity 
-  			style={styles.button}
-  			onPress={() => this.props.onPress()}
+        disabled={disabled}
+  			style={disabled?styles.disabledButton:styles.button}
+  			onPress={() => onPress()}
   		>
-    			<Text style={styles.buttonText}> {this.props.title} </Text>
+    			<Text style={disabled?styles.disabledButtonText:styles.buttonText}> {title} </Text>
 			</TouchableOpacity>
     );
   }
@@ -19,11 +21,18 @@ export default class PrimaryButton extends Component {
 
 const styles = StyleSheet.create({
   button: {
-  	...theme.primaryButton,
+    ...theme.primaryButton,
+    marginTop:20,
+  },
+  disabledButton: {
+    ...theme.disabledPrimaryButton,
     marginTop:20,
   },
   buttonText: {
-  	...theme.buttonText,
+    ...theme.buttonText,
+  },
+  disabledButtonText: {
+    ...theme.disabledButtonText,
   },
 });
 

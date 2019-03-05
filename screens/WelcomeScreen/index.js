@@ -17,17 +17,16 @@ class WelcomeScreen extends Component {
   render() {
     return (
       <View style={styles.root}>
-      	<View style={styles.mainImage}>
-			<Image 
-				source={require('../../assets/images/Nuls.png')} 
-				//style={{resizeMode:'center'}}
-				/>
-      	</View>
+      	<View style={styles.mainLogoContainer}>
+					<Image 
+						source={require('../../assets/images/Nuls.png')} 
+						style={styles.mainLogo}
+						/>
+	    	</View>
 
 	    <Text style={styles.titleText}>
-	    	Welcome To Nuls
+	    	Welcome To NULS
 	    </Text>
-
 
 {
 		// <View style={{width:30, borderBottomColor: 'white', borderBottomWidth: 1}}/>
@@ -40,11 +39,12 @@ class WelcomeScreen extends Component {
 	    // 	<Text> Created by Tudor Barbulescu. CCC.</Text>
 	    // </Text>
 }
-	    <PrimaryButton title="Create Wallet" onPress={() => {console.log("A")}} />
-	    <PrimaryButton title="Import Wallet" onPress={() => this.props.navigation.navigate('App')} />
+
+	    <PrimaryButton title="Enter Wallet" onPress={() => this.props.navigation.navigate('App')} />
+	    {<PrimaryButton title="Create New Wallet" disabled onPress={() => { console.log("A") }} />}
 
 	    <View style={styles.footer}>
-	     	<Text style={styles.footerText}> CCC. Created by Tudor Barbulescu.</Text>
+	     	<Text style={styles.footerText}> Created by Tudor Barbulescu CCC</Text>
 	    </View>
       </View>
     );
@@ -55,23 +55,27 @@ const styles = StyleSheet.create({
 	root:{
 		flex: 1,
 		flexDirection: 'column',
-		justifyContent: 'center',
+		//justifyContent: 'center',
 		alignItems:'center',
 		backgroundColor: theme.palette.primary.main,
 	},
 
-	mainImage:{
+	mainLogoContainer:{
 		justifyContent: 'center',
 		alignItems:'center',
-		//backgroundColor:'white',
 		borderRadius:300,
-		//borderColor:'white',
-		//borderWidth: 2,
-		width:290,
-		height:290,
+		borderWidth: 1,
+		borderColor:'white',
+		marginLeft: 'auto', 
+		marginRight: 'auto',
+		padding:40,
+		marginTop:100,
 		margin:20,
-		marginLeft: "auto", 
-		marginRight: "auto"
+	},
+	mainLogo:{
+		width:200,
+		height:200,
+		resizeMode:'contain',
 	},
 	titleText: {
 	  	...theme.text,

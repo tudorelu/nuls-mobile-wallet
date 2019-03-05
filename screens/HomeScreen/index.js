@@ -48,7 +48,7 @@ class HomeScreen extends Component {
 		      />
         </View>,
       headerLeft: 
-        <TouchableOpacity onPress={ () => navigation.navigate('Menu') }>
+        <TouchableOpacity onPress={ () => navigation.navigate('Welcome') }>
           <Icon
             name='menu'
             type='feather'
